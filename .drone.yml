@@ -10,7 +10,7 @@ steps:
   image: ubuntu:bionic
   pull: true
   commands:
- - apt update && apt-get install -y \
+  - apt update && apt-get install -y \
   git \
   subversion \
   build-essential \
