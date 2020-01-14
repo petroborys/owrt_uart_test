@@ -20,9 +20,7 @@ cp ../targets/mikrotik/config .config
 
 make defconfig
 
-make download
-
-make toolchain/install
+make toolchain/install -j1 V=s
 
 # git clone --branch v18.06.5 --depth 1 https://git.openwrt.org/openwrt/openwrt.git openwrt
 
