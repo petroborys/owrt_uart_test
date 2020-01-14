@@ -22,7 +22,11 @@ cp ../targets/mikrotik/config .config
 
 make defconfig
 
-make toolchain/install -j1 V=s
+# make toolchain/install
+
+make package/uart_test/compile
+
+ls bin/packages/*/*
 
 # git clone --branch v18.06.5 --depth 1 https://git.openwrt.org/openwrt/openwrt.git openwrt
 
