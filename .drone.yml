@@ -6,18 +6,8 @@ trigger:
   - push
 
 steps:
-- name: build
-  image: debian:buster-slim
-  user: root
-
+- name: source
+  image: ubuntu:bionic
+  pull: true
   commands:
-  - apt update && apt install -y build-essential --no-install-suggests
-  - apt-get install wget -y
-  - apt-get install unzip -y
-  - echo "Source..."
-  - git clone https://git.openwrt.org/openwrt/openwrt.git openwrt
-  - cd openwrt
-  - git checkout v18.06.5
-  - make distclean
-  - ./scripts/feeds update -a
-  - ./scripts/feeds install -a
+  - ./source.sh
