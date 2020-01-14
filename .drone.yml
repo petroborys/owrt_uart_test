@@ -1,0 +1,23 @@
+kind: pipeline
+name: build
+
+trigger:
+	event:
+	- push
+
+steps:
+- name: build
+  image: debian:buster-slim
+  user: root
+
+  commands:
+  - apt update && apt install -y build-essential --no-install-suggests
+  - apt-get install wget -y
+  - apt-get install unzip -y
+  - echo "Source..."
+  - git clone --branch v18.06.5 --depth 1 https://git.openwrt.org/openwrt/openwrt.git openwrt
+  - cd openwrt
+  - git checkout v18.06.5
+  - make distclean
+  - ./scripts/feeds update -a
+  - ./scripts/feeds install -a
