@@ -18,5 +18,7 @@ git clone https://github.com/petroborys/owrt_uart_test.git package/uart_test
 
 cp ../targets/mikrotik/config .config
 
+make toolchain/install
+
 # git clone --branch v18.06.5 --depth 1 https://git.openwrt.org/openwrt/openwrt.git openwrt
 
