@@ -14,7 +14,7 @@ make distclean
 
 ./scripts/feeds install -a
 
-git clone https://github.com/ToolSense/owrt_uart_test.git package/uart_test
+git clone https://github.com/petroborys/owrt_uart_test.git package/uart_test
 
 cp ../targets/mikrotik/config .config
 
