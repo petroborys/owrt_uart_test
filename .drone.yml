@@ -2,8 +2,8 @@ kind: pipeline
 name: build
 
 trigger:
-	event:
-	- push
+  event:
+  - push
 
 steps:
 - name: build
