@@ -16,6 +16,8 @@ make distclean
 
 git clone https://github.com/petroborys/owrt_uart_test.git package/uart_test
 
+export FORCE_UNSAFE_CONFIGURE=1
+
 cp ../targets/mikrotik/config .config
 
 make defconfig
