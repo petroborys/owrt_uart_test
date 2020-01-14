@@ -22,8 +22,9 @@ cp ../targets/mikrotik/config .config
 
 make defconfig
 
-# make toolchain/install
 make download
+
+make toolchain/install
 
 make package/uart_test/compile
 
