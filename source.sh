@@ -22,7 +22,7 @@ cp ../targets/mikrotik/config .config
 
 make defconfig
 
-make download
+# make download
 
 make toolchain/install
 
