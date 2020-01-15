@@ -2,8 +2,14 @@
 
 set -ex
 
-git clone https://git.openwrt.org/openwrt/openwrt.git openwrt
-ls 
+cd scr
+
+make
+
+ls
+
+# git clone https://git.openwrt.org/openwrt/openwrt.git openwrt
+ 
 # cd openwrt
 
 # git checkout v18.06.5 
