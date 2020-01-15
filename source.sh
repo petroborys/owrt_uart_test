@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SDK = openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64
+SDK = "openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64"
 
 set -ex
 
