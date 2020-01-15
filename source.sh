@@ -36,7 +36,7 @@ make package/uart_test/download
 
 make package/uart_test/prepare
 
-make package/uart_test/compile
+make package/uart_test/compile -j1 V=s
 
 ls bin/packages/*/*
 
