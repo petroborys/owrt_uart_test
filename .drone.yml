@@ -1,8 +1,6 @@
 kind: pipeline
 name: build
 
-DRONE_TIMEOUT=3h
-
 trigger:
   event:
   - push
