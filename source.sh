@@ -8,7 +8,7 @@ cd openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64
 
 ./scripts/feeds update -a
 
-./scripts/feeds install -a
+# ./scripts/feeds install -a
 
 git clone https://github.com/petroborys/owrt_uart_test.git package/uart_test
 
