@@ -5,6 +5,9 @@ trigger:
   event:
   - push
 
+environment:
+  SDK: openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64
+
 steps:
 - name: source
   image: ubuntu:bionic
