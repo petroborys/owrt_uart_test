@@ -10,5 +10,5 @@ steps:
   image: ubuntu:bionic
   pull: true
   commands:
-  - apt update && apt-get install -y git subversion build-essential libncurses5-dev zlib1g-dev gawk gcc-multilib flex gettext libssl-dev unzip wget time python python3 python3-distutils file autoconf&& rm -rf /var/lib/apt/lists/*
+  - apt update && apt-get install -y git curl subversion build-essential libncurses5-dev zlib1g-dev gawk gcc-multilib flex gettext libssl-dev unzip wget time python python3 python3-distutils file autoconf&& rm -rf /var/lib/apt/lists/*
   - ./source.sh
