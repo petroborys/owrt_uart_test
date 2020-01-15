@@ -5,9 +5,6 @@ trigger:
   event:
   - push
 
-environment:
-  SDK: openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64
-
 steps:
 - name: source
   image: ubuntu:bionic
@@ -15,3 +12,4 @@ steps:
   commands:
   - apt update && apt-get install -y git curl xz-utils subversion build-essential libncurses5-dev zlib1g-dev gawk gcc-multilib flex gettext libssl-dev unzip wget time python python3 python3-distutils file autoconf&& rm -rf /var/lib/apt/lists/*
   - ./source.sh
+    

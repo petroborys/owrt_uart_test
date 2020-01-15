@@ -2,6 +2,8 @@
 
 set -ex
 
+export SDK=openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64
+
 curl -SL https://downloads.openwrt.org/snapshots/targets/ar71xx/mikrotik/$SDK.tar.xz | tar xJ
 
 mkdir openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64/package/uart_test
