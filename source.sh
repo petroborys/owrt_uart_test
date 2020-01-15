@@ -10,11 +10,11 @@ cd openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64
 
 ./scripts/feeds install -a
 
-git clone https://github.com/petroborys/owrt_uart_test.git package/owrt_uart_test
+git clone https://github.com/petroborys/owrt_uart_test.git package/uart_test
 
 make defconfig
 
-make package/owrt_uart_test/compile -j V=s
+make package/uart_test/compile
 
 ls bin/packages/*/*
 
