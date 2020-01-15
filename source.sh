@@ -2,39 +2,43 @@
 
 set -ex
 
-cd src
+# cd src
 
-make
+# make
 
-ls
+# ls
 
-# git clone https://git.openwrt.org/openwrt/openwrt.git openwrt
+git clone https://git.openwrt.org/openwrt/openwrt.git openwrt
  
-# cd openwrt
+cd openwrt
 
-# git checkout v18.06.5 
+git checkout v18.06.5 
 
-# make distclean
+make distclean
 
-# ./scripts/feeds update -a
+./scripts/feeds update -a
 
-# ./scripts/feeds install -a
+./scripts/feeds install -a
 
-# git clone https://github.com/petroborys/owrt_uart_test.git package/uart_test
+git clone https://github.com/petroborys/owrt_uart_test.git package/uart_test
 
-# export FORCE_UNSAFE_CONFIGURE=1
+export FORCE_UNSAFE_CONFIGURE=1
 
-# cp ../targets/mikrotik/config .config
+cp ../targets/mikrotik/config .config
 
-# make defconfig
+make defconfig
 
-# # make download
+# make download
 
 # make toolchain/install
 
-# make package/uart_test/compile
+make package/uart_test/download
 
-# ls bin/packages/*/*
+make package/uart_test/prepare
+
+make package/uart_test/compile
+
+ls bin/packages/*/*
 
 # git clone --branch v18.06.5 --depth 1 https://git.openwrt.org/openwrt/openwrt.git openwrt
 
