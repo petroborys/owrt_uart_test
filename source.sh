@@ -14,7 +14,7 @@ git clone https://github.com/petroborys/owrt_uart_test.git package/owrt_uart_tes
 
 make defconfig
 
-make package/owrt_uart_test/compile
+make package/owrt_uart_test/compile -j V=s
 
 ls bin/packages/*/*
 
