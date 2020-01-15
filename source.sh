@@ -4,13 +4,15 @@ set -ex
 
 curl -SL https://downloads.openwrt.org/snapshots/targets/ar71xx/mikrotik/openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64.tar.xz | tar xJ
 
+cp -avrs src openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64.tar.xz/package/uart_test
+
 cd openwrt-sdk-ar71xx-mikrotik_gcc-7.4.0_musl.Linux-x86_64
 
 ./scripts/feeds update -a
 
 # ./scripts/feeds install -a
 
-git clone https://github.com/petroborys/owrt_uart_test.git package/uart_test
+# git clone https://github.com/petroborys/owrt_uart_test.git package/uart_test
 
 make defconfig
 
