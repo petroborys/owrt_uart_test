@@ -2,7 +2,7 @@
 
 set -ex
 
-cd scr
+cd src
 
 make
 
