@@ -4,12 +4,30 @@ name: build
 trigger:
   event:
   - push
+  - tag
 
 steps:
-- name: source
-  image: ubuntu:bionic
-  pull: true
+- name: build
+  image: debian:buster-slim
+  environment:
+    SONAR_WRAPPER_URL: https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
   commands:
-  - apt update && apt-get install -y git curl xz-utils subversion build-essential libncurses5-dev zlib1g-dev gawk gcc-multilib flex gettext libssl-dev unzip wget time python python3 python3-distutils file autoconf&& rm -rf /var/lib/apt/lists/*
-  - ./source.sh
-    
+  - apt update && apt install -y build-essential --no-install-suggests
+  - apt-get install tree -y
+  - apt-get install wget -y
+  - apt-get install unzip -y
+  - apt-get install git -y
+  - apt-get install bzip2 -y
+  - apt-get install libbz2-dev -y
+  - apt-get install libconfig-dev -y
+  - apt-get install -y libmodbus-dev -y
+  - apt-get install libmbedtls-dev -y
+  - apt-get install libmosquitto-dev -y
+  - apt-get install -y curl xz-utils subversion build-essential libncurses5-dev zlib1g-dev gawk gcc-multilib flex gettext libssl-dev time python python3 python3-distutils file autoconf&& rm -rf /var/lib/apt/lists/*
+  - wget -O build-wrapper.zip $SONAR_WRAPPER_URL
+  - unzip -d /drone/src /drone/src/build-wrapper.zip
+  - export PATH=$PATH:/drone/src/build-wrapper-linux-x86
+  - pwd
+  - tree
+  - cp ./build-wrapper-linux-x86/libinterceptor-x86_64.so ./build-wrapper-linux-x86/libinterceptor-haswell.so
+  - build-wrapper-linux-x86-64 ./source.sh
